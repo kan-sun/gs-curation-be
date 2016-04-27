@@ -1,8 +1,6 @@
 group = 'com.gs'
 version = '1.0-SNAPSHOT'
 
-description = """"""
-
 buildscript {
     repositories {
         jcenter()
@@ -14,6 +12,15 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'spring-boot'
+apply plugin: 'war'
+
+war {
+    baseName = 'curation'
+}
+
+configurations {
+    providedRuntime
+}
 
 repositories {
     jcenter()
@@ -32,5 +39,5 @@ dependencies {
     testCompile group: 'com.jcabi', name: 'jcabi-matchers', version: '1.3'
     testCompile group: 'info.cukes', name: 'cucumber-java8', version: '1.2.4'
     testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.4'
-    //provided group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version:'1.3.3.RELEASE'
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 }
