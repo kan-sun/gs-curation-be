@@ -30,7 +30,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
     "region",
     "w_Japan"
 })
-public class Doc {
+public final class Doc {
 
     @JsonProperty("title_en")
     private final String titleEn;
