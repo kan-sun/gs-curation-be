@@ -14,6 +14,7 @@ buildscript {
         classpath 'com.moowork.gradle:gradle-grunt-plugin:0.12'
     }
 }
+apply plugin: 'base'
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'spring-boot'
@@ -34,11 +35,15 @@ war {
 //    // Enabled the automatic download. False is the default (for now).
 //    download = true
 //}
-
+//
+npmInstall {
+    execOverrides {
+        it.workingDir = file('src/main/resources/static')
+    }
+}
 grunt {
     // Set the directory where Gruntfile.js should be found
     workDir = file("${project.projectDir}/src/main/resources/static")
-    outputDir = file("$project.projectDir/classes/static")
 
     // Whether colors should output on the terminal
     colors = true
@@ -105,4 +110,4 @@ dependencies {
 //}
 //
 //war.dependsOn('explodeInBuild')
-build.dependsOn('grunt_build')
+//build.dependsOn('grunt_build')
