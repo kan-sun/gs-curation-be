@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Optional;
 
 @RestController
@@ -40,8 +41,8 @@ public class CurationController {
     private CurationResponse loadFromFile() {
         try {
             final Resource resource = resourceLoader.getResource("classpath:Documents.json");
-            final File file = resource.getFile();
-            return mapper.readValue(file, CurationResponse.class);
+            final InputStream inputStream = resource.getInputStream();
+            return mapper.readValue(inputStream, CurationResponse.class);
         } catch (IOException e) {
             LOGGER.error("Error in reading from the local json file. An empty will be returned.", e);
             return new CurationResponse(ResponseHeader.newBuilder().build(), Response.newBuilder().build());

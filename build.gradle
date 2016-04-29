@@ -20,9 +20,11 @@ war {
 
 configurations {
     providedRuntime
+    frontEndResources
 }
 
 repositories {
+    mavenLocal()
     jcenter()
     maven { url "http://repo.maven.apache.org/maven2" }
 }
@@ -41,4 +43,36 @@ dependencies {
     testCompile group: 'info.cukes', name: 'cucumber-java8', version: '1.2.4'
     testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.4'
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    frontEndResources "com.gs:gs-curation-fe:1.0-SNAPSHOT@war"
 }
+
+task explodeInResource(type: Copy){
+    configurations.frontEndResources.filter {it.toString().endsWith(".war")}.each{
+        from zipTree(it).matching {
+            include 'static/**/*'
+        }
+    }
+    into "src/main/resources"
+}
+
+task explodeInBuild(type: Copy){
+    configurations.frontEndResources.filter {it.toString().endsWith(".war")}.each{
+        from zipTree(it).matching {
+            include 'static/**/*'
+        }
+    }
+    into "$buildDir/classes"
+}
+
+bootRun {
+    mustRunAfter "explodeInResource"
+}
+
+war {
+    from("$buildDir/classes/static") {
+        include '**/*'
+        into 'WEB-INF/classes/static'
+    }
+}
+
+war.dependsOn('explodeInBuild')
