@@ -1,0 +1,9 @@
+.fa-gold {
+    color: #FEBA00;
+    &--table {
+        margin-top: 7px;
+        &:first-child {
+            margin-left: 4px;
+        }
+    }
+}

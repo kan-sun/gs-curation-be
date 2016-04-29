@@ -1,0 +1,10 @@
+.navbar {
+    margin-bottom: 0;
+    background-color: $navigation-color;
+    border-color: darken($navigation-color, 5%);
+    border-radius: 0;
+
+    .navbar-brand {
+        color: $white;
+    }
+}

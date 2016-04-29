@@ -1,0 +1,15 @@
+.sidebar {
+    position: absolute;
+    left: 0;
+    top: 52px;
+    width: $sidebar-width;
+    background-color: $navigation-color;
+    height: calc(100% - 52px);
+    z-index: 100;
+    padding: 15px;
+    color: $white;
+
+    input {
+        color: $black
+    }
+}

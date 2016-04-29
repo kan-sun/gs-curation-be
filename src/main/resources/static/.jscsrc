@@ -1,0 +1,62 @@
+{
+    "disallowKeywords": ["with"],
+    "disallowKeywordsOnNewLine": ["else"],
+    "disallowMixedSpacesAndTabs": true,
+    "disallowMultipleVarDecl": null,
+    "disallowNewlineBeforeBlockStatements": true,
+    "disallowNotOperatorsInConditionals": null,
+    "disallowQuotedKeysInObjects": null,
+    "disallowSemicolons": null,
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpacesInsideParentheses": true,
+    "disallowTrailingWhitespace": "ignoreEmptyLines",
+    "excludeFiles": [
+        "docs/*.js"
+    ],
+    "maxErrors": 10000,
+    "maximumLineLength": 200,
+    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "requireCapitalizedComments": true,
+    "requireCapitalizedConstructors": true,
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch",
+        "default"
+    ],
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch",
+        "case",
+        "default",
+        "yield"
+    ],
+    "requireSpaceAfterLineComment": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "requireSpaceBeforeBinaryOperators": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpaceBeforeObjectValues": true,
+    "requireTrailingComma": null,
+    "validateIndentation": null,
+    "validateLineBreaks": "LF",
+    "validateQuoteMarks": "'",
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireSpacesInFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireCamelCaseOrUpperCaseIdentifiers": null
+}

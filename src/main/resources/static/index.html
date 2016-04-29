@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Curation application for GS">
+	<meta name="author" content="SomoGlobal">
+
+	<title>Curation</title>
+
+	<!-- Dash UI (bootstrap) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- UI Grid Styles -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-grid/3.1.1/ui-grid.css">
+
+	<!-- Application styles -->
+	<!-- build:css assets/css/main.min.css -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="assets/css/main.css"/>
+	<!-- /build-->
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body ng-app='app'>
+
+    <div id='app' class="app" ui-view></div>
+
+    <!-- build:js app/app.min.js -->
+	<script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+	<script src="app.js"></script>
+	<script src="app/modules/app.core.module.js"></script>
+    <script src="app/modules/app.ui.module.js"></script>
+	<script src="app/routes/routes.js"></script>
+    <script src="app/rating/rating.controller.js"></script>
+    <script src="app/rating/rating.service.js"></script>
+    <script src="app/utils/curation.service.js"></script>
+    <script src="app/ui/navbar.directive.js"></script>
+    <script src="app/rating/grid.service.js"></script>
+    <script src="app/docview/docview.service.js"></script>
+    <script src="app/ui/slider.button.directive.js"></script>
+    <script src="app/ui/ai.rating.directive.js"></script>
+
+    <!-- /build -->
+</body>
+</html>
